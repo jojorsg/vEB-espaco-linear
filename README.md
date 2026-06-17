@@ -1,8 +1,6 @@
-
-======================================================
-===     ÁRVORE VAN EMDE BOAS COM ESPAÇO LINEAR     ===
-======================================================
-
+---------------------------------------
+ÁRVORE VAN EMDE BOAS COM ESPAÇO LINEAR
+---------------------------------------
 Implementação em Java (openjdk 21.0.10) de uma árvore van Emde Boas (vEB) para universo de 32 bits (0 a 2^32 - 1), com uso de tabela de dispersão (HashMap) e técnica de table doubling/halving para manter o consumo de memória proporcional ao número de elementos armazenados.
 
 ESTRUTURA DO PROJETO
@@ -67,15 +65,18 @@ Cada linha contém uma operação:
 
 FORMATO DA SAÍDA
 ----------------
-- SUC: SUC <x> 
-       <resultado> (valor estritamente maior que x ou +INF)
-- PRE: PRE <x> 
-       <resultado> (valor estritamente menor que x ou -INF)
-- IMP: IMP 
-       Estrutura <Min, C[]: x, y, z> (mínimo, clusters e valores contidos nos respectivos clusters)
+- SUC:  
+       SUC X   
+       resultado (valor estritamente maior que x ou +INF)
+- PRE:  
+       PRE X  
+       resultado (valor estritamente menor que x ou -INF)
+- IMP:  
+       IMP  
+       Estrutura <Min, C[ ]: x, y, z> (mínimo, clusters e valores contidos nos respectivos clusters)
 
 AUTOR/DESENVOLVEDOR
 -----------------------
 - Josué Roberto Santana Gomes - 603238
 
-===========================================================
+------------------------------------------------------------
