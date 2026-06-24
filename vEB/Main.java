@@ -5,7 +5,7 @@
  * 
  * Aluno:
  * @author Josué Roberto 
- * @version 1.0
+ * @version 2.0
  * @since 09/06/2026
  * 
  */

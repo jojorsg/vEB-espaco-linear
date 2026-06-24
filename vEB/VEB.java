@@ -5,19 +5,20 @@
  * 
  * Aluno:
  * @author Josué Roberto 
- * @version 1.0
+ * @version 2.0
  * @since 09/06/2026
  * 
  */
 
 import java.util.*;
 
-class VEB {
+
+public class VEB {
     final long u;
     long min;
     long max;
     VEB resumo;
-    Map<Integer, VEB> clusters;
+    TabelaHash<Integer, VEB> clusters;
     int lowBits;
     long lowTamanho;
     int highBits;
@@ -40,7 +41,7 @@ class VEB {
             lowTamanho  = 1L << lowBits;
             highTamanho = 1L << highBits;
             resumo = new VEB(highTamanho);
-            clusters = new HashMap<>();
+            clusters = new TabelaHash<>();
         } else {                      // sendo u == 2 ele é caso base sem resumo e clusters
             lowBits = highBits = 0;
             lowTamanho = highTamanho = 0;
@@ -56,6 +57,7 @@ class VEB {
     }
 
     public void inserir(long x) {
+        if (x < 0 || x >= u) return;   // ignora valores fora do universo [0, u-1]
         if (min == NONE) {
             min = max = x;
             return;
@@ -111,7 +113,7 @@ class VEB {
 
         cluster.remover(l);
         if (cluster.min == NONE) {
-            clusters.remove(h);
+            clusters.remove(h);         
             resumo.remover(h);
         }
 
